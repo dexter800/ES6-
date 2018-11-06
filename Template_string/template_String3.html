@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Template String</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+
+<body>
+    <script>
+        const beer = {
+            name: 'Belgian wit',
+            brewery: 'Steam Whistle Brewery',
+            keywords: ['pale', 'cloudy', 'spiced', 'crisp']
+        };
+
+        function renderKeyWords(keywords) {
+            return ` 
+      <ul> 
+      ${keywords.map(keyword => 
+      `<li> ${keyword} </li>`).join('')}
+      
+      </ul>
+      `;
+        }
+
+        const markup =
+            `
+  <div class = "beer">
+  
+  <h2> ${beer.name}</h2>
+  <p class = "brewery"> ${beer.brewery}</p> 
+
+  ${renderKeyWords(beer.keywords)}
+  </div> 
+   `;
+
+        document.body.innerHTML = markup;
+    </script>
+</body>
+
+</html>
